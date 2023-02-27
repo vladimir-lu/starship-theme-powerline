@@ -1,6 +1,6 @@
 format = """\
 $character\
-[](fg:prevbg bg:babyblue)\
+[](bg:babyblue fg:prevbg)\
 $username\
 [](bg:mediumgrey fg:prevbg)\
 $directory\
