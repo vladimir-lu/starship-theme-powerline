@@ -1,0 +1,62 @@
+format = """\
+$character\
+[](fg:prevbg bg:babyblue)\
+$username\
+[](bg:mediumgrey fg:prevbg)\
+$directory\
+[ ](fg:prevbg)\
+"""
+
+right_format = """\
+([](fg:burgundy bg:prevbg)$status)\
+([](fg:darkgrey bg:prevbg)$git_branch)\
+"""
+
+# Disable the blank line at the start of the prompt
+add_newline = false 
+
+# Set custom palette
+palette = "solarized"
+
+[character]
+format='$symbol'
+success_symbol = "[ INSERT ](bold fg:darkgreen bg:brightgreen)"
+error_symbol = "[ INSERT ](bold fg:darkgreen bg:brightgreen)"
+vimcmd_symbol = "[ COMMND ](bold fg:darkgreen bg:white)"
+
+# You can also replace your username with a neat symbol like   or disable this
+# and use the os module below
+[username]
+show_always = true
+format = '[ $user ](bold fg:white bg:prevbg)'
+disabled = false
+
+[directory]
+# TODO: styled path separator
+style = "fg:white bg:mediumgrey"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[status]
+# TODO: different colours for success, also signal name is not shown in pipestatus
+disabled = false
+style = "bg:burgundy fg:white"
+format = "[ $status ]($style)"
+pipestatus = true
+pipestatus_separator = "[](fg:dimwhite bg:burgundy)"
+pipestatus_format = "[$pipestatus]($style)"
+
+[git_branch]
+format = "[ $symbol$branch ]($style)"
+style = "fg:dimwhite bg:darkgrey"
+
+[palettes.solarized]
+darkgreen = "22"
+brightgreen = "148"
+white = "15"
+dimwhite = "250"
+babyblue = "4"
+mediumgrey = "240"
+darkgrey = "236"
+burgundy = "52"
